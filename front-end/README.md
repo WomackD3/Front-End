@@ -1,18 +1,37 @@
 # Title of Project
 
-## (Group name here)
+## Simplicity
 
 
+### Carlton James
+### Denard Womack
+### Gilbert Polanco
+### Timothy Tang 
+
+## Summary of project
+
+Project approval guidelines:
+Code owner - Denard Womack
+Timeline - (see schedule at bottom)
+Team Roles:
+ Figma Design: James/Womack
+ Back-End: Womack, Polanco, Tang
+ Front-End Logic: James(Lead), Womack, Polanco, Tang
+ 
+
+GitHub Project Front-End Link: https://github.com/WomackD3/Front-End
+
+ GitHub Project Back-End Link: https://github.com/WomackD3/Git-Group--Practice 
 
 
-Carlton James
-Denard Womack
-Gilbert Polanco
-Timothy Tang 
+### Team Expectations:
 
-## Description/Summary of project
+1. Accountability through Trello, people take responsibility or ownership of task on Trello however, communication and collaboration is encouraged on individual tasks.
 
-input description here
+2. Before we make a pull request we communicate together for the code owner to approve it after Simplicity does a thorough review.
+
+3. We pull request at the end of the night, in the morning Womack will approve and communicate approval or potential merge conflicts via slack.  We all pull from that branch at the morning of class.
+
 
 ### WireFrame
 
@@ -32,10 +51,26 @@ const Example = new Schema(
   imageURL: { type : String, required: true },
 )
 ```
+### Technology Utilized:
 
-### MVP
+Trellio
+Express
+Json
+React
+MongoDB
+Mongosh
+Javascript
 
-### PVMP
+
+### MVP:
+
+Authentication/Login
+ 2.   Landing Page
+ 3.  Functionality for the user ( able to post and comment on individual pages)
+
+### PVMP:
+
+
 
 ### Deployments
 
