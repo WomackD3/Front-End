@@ -79,7 +79,7 @@ export const ReactHookFormDemo = () => {
 
             <div className="flex justify-content-center">
                 <div className="card">
-                    <h5 className="text-center">Register</h5>
+                    <h5 className="text-center">Create An Account</h5>
                     <form onSubmit={handleSubmit(onSubmit)} className="p-fluid">
                         <div className="field">
                             <span className="p-float-label">
@@ -135,6 +135,7 @@ export const ReactHookFormDemo = () => {
                         </div>
 
                         <Button type="submit" label="Submit" className="mt-2" />
+                        <h6 className="already">Already have an account? <a href=''>Sign in!</a></h6>
                     </form>
                 </div>
             </div>
