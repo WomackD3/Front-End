@@ -1,5 +1,6 @@
-import './App.scss'
+import './App2.scss'
 import {RegisterForm} from './components/register.jsx'
+import {ReactHookFormDemo} from './components/register2'
 
 function App() {
   return (
@@ -7,7 +8,7 @@ function App() {
       <h2>Wasssup Team of Greats</h2>
 
       <div className="regForm">
-        <RegisterForm />
+        <ReactHookFormDemo />
         </div>
     </div>
   );
