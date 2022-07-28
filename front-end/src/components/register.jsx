@@ -74,7 +74,8 @@ export const RegisterForm = () => {
         </React.Fragment>
     );
 
-    return (
+  return (
+      <div className="display">
         <div className="register-form">
             <Dialog visible={showMessage} onHide={() => setShowMessage(false)} position="top" footer={dialogFooter} showHeader={false} breakpoints={{ '960px': '80vw' }} style={{ width: '30vw' }}>
                 <div className="flex align-items-center flex-column pt-6 px-3">
@@ -94,8 +95,8 @@ export const RegisterForm = () => {
                             <Field name="name" render={({ input, meta }) => (
                                 <div className="field">
                                     <span className="p-float-label">
-                                        <InputText id="name" {...input} autoFocus className={classNames({ 'p-invalid': isFormFieldValid(meta) })} />
-                                        <label htmlFor="name" className={classNames({ 'p-error': isFormFieldValid(meta) })}>Name*</label>
+                                        <InputText id="name" placeholder="Name" {...input} autoFocus className={classNames({ 'p-invalid': isFormFieldValid(meta) })} />
+                                        <label htmlFor="name" className={classNames({ 'p-error': isFormFieldValid(meta) })}></label>
                                     </span>
                                     {getFormErrorMessage(meta)}
                                 </div>
@@ -104,8 +105,8 @@ export const RegisterForm = () => {
                                 <div className="field">
                                     <span className="p-float-label p-input-icon-right">
                                         <i className="pi pi-envelope" />
-                                        <InputText id="email" {...input} className={classNames({ 'p-invalid': isFormFieldValid(meta) })} />
-                                        <label htmlFor="email" className={classNames({ 'p-error': isFormFieldValid(meta) })}>Email*</label>
+                                        <InputText id="email" placeholder="Email" {...input} className={classNames({ 'p-invalid': isFormFieldValid(meta) })} />
+                                        <label htmlFor="email" className={classNames({ 'p-error': isFormFieldValid(meta) })}></label>
                                     </span>
                                     {getFormErrorMessage(meta)}
                                 </div>
@@ -113,8 +114,8 @@ export const RegisterForm = () => {
                             <Field name="password" render={({ input, meta }) => (
                                 <div className="field">
                                     <span className="p-float-label">
-                                        <Password id="password" {...input} toggleMask className={classNames({ 'p-invalid': isFormFieldValid(meta) })} header={passwordHeader} footer={passwordFooter} />
-                                        <label htmlFor="password" className={classNames({ 'p-error': isFormFieldValid(meta) })}>Password*</label>
+                                        <Password id="password" placeholder="Password" {...input} toggleMask className={classNames({ 'p-invalid': isFormFieldValid(meta) })} header={passwordHeader} footer={passwordFooter} />
+                                        <label htmlFor="password" className={classNames({ 'p-error': isFormFieldValid(meta) })}></label>
                                     </span>
                                     {getFormErrorMessage(meta)}
                                 </div>
@@ -122,8 +123,8 @@ export const RegisterForm = () => {
                             <Field name="date" render={({ input }) => (
                                 <div className="field">
                                     <span className="p-float-label">
-                                        <Calendar id="date" {...input} dateFormat="dd/mm/yy" mask="99/99/9999" showIcon />
-                                        <label htmlFor="date">Birthday</label>
+                                        <Calendar id="date" placeholder="Birthday" {...input} dateFormat="dd/mm/yy" mask="99/99/9999" showIcon />
+                                        <label htmlFor="date"></label>
                                     </span>
                                 </div>
                             )} />
@@ -134,20 +135,22 @@ export const RegisterForm = () => {
                                         <label htmlFor="country">Country</label>
                                     </span>
                                 </div>
-                            )} />
-                            <Field name="accept" type="checkbox" render={({ input, meta }) => (
+                )} />
+                            {/* <Field name="accept" type="select" render={({ input, meta }) => (
                                 <div className="field-checkbox">
                                     <Checkbox inputId="accept" {...input} className={classNames({ 'p-invalid': isFormFieldValid(meta) })} />
                                     <label htmlFor="accept" className={classNames({ 'p-error': isFormFieldValid(meta) })}>I agree to the terms and conditions*</label>
-                                </div>
-                            )} />
+                    </div>
+                    
+                            )} /> */}
 
                             <Button type="submit" label="Submit" className="mt-2" />
                         </form>
                     )} />
                 </div>
             </div>
-        </div>
+      </div>
+      </div>
     );
 }
 

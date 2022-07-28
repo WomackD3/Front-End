@@ -1,15 +1,62 @@
+* {
+  
+}
+.display{
+  background: linear-gradient(322deg, #7dd6bf, #4cc22f, #505755, #21afc3);
+    background-size: 800% 800%;
+
+    -webkit-animation: AnimationName 9s ease infinite;
+    -moz-animation: AnimationName 9s ease infinite;
+    animation: AnimationName 9s ease infinite;
+}
+
+@-webkit-keyframes AnimationName {
+    0%{background-position:0% 75%}
+    50%{background-position:100% 26%}
+    100%{background-position:0% 75%}
+}
+@-moz-keyframes AnimationName {
+    0%{background-position:0% 75%}
+    50%{background-position:100% 26%}
+    100%{background-position:0% 75%}
+}
+@keyframes AnimationName {
+    0%{background-position:0% 75%}
+    50%{background-position:100% 26%}
+    100%{background-position:0% 75%}
+}
+.regForm {
+  margin: 50px; 
+display: flex;
+position: relative;
+}
+
 .register-form .card {
+  // border: 2px solid;
+width: 600px;
+  margin: 200px 400px;
     min-width: 450px;
 }
 
-.register-form .card form {
+form {
+  // border: 2px solid red;
+
     margin-top: 2rem;
 }
 
 .register-form .card .field {
+  // border: 2px solid purple;
+
     margin-bottom: 1.5rem;
 }
-
+.field-checkbox {
+  border: 2px solid black;
+  width: 300px;
+  // display: flex;
+}
+.checkbox {
+  border: 2px solid red;
+}
 @media screen and (max-width: 960px) {
     .register-form .card {
         width: 80%;
