@@ -1,6 +1,6 @@
-# Title of Project
+# Telekinesis
 
-## Simplicity
+## Simplicity Members
 
 
 ### Carlton James
@@ -9,6 +9,8 @@
 ### Timothy Tang 
 
 ## Summary of project
+We wanted to create a message board that would interact with the user and the audience. By implementing functions such as registration, postability, and thread creation.
+### Team Expectations:
 
 Project approval guidelines:
 Code owner - Denard Womack
@@ -24,7 +26,6 @@ GitHub Project Front-End Link: https://github.com/WomackD3/Front-End
  GitHub Project Back-End Link: https://github.com/WomackD3/Git-Group--Practice 
 
 
-### Team Expectations:
 
 1. Accountability through Trello, people take responsibility or ownership of task on Trello however, communication and collaboration is encouraged on individual tasks.
 
@@ -69,7 +70,8 @@ Authentication/Login
  3.  Functionality for the user ( able to post and comment on individual pages)
 
 ### PVMP:
-
+1. Implementing multiple apis for users to create a personalized webpage (pokemon, books,e.t.c)
+2.  Ability to like,share, and other social media features.
 
 
 ### Deployments
