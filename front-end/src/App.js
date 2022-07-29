@@ -1,19 +1,20 @@
 import './App.scss'
-import { RegisterForm } from './components/register.jsx'
-import { Login } from './components/login'
+import RegisterForm from './components/Register.jsx'
+import Login from './components/login'
 import NavBar from './screens/NavBar';
-import { BrowserRouter as Router } from 'react-router-dom'
+import { Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router} from 'react-router-dom'
 
 function App() {
   return (
     <div className="App">
       <h2>Wasssup Simpliciity</h2>
       <div>
-        <Login />
-          <Router>
-            {<NavBar />}
-          </Router>
-        <RegisterForm />
+          <NavBar />
+          <Routes>
+            <Route path="/" element={<Login />} />
+            <Route path="/Register" element={<RegisterForm />} />
+          </Routes>
       </div>
      </div>
    );

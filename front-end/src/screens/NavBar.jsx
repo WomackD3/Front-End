@@ -14,13 +14,13 @@ export default function NavBar() {
         </NavLink >
         <Bars />
         <NavMenu>
-          <NavLink to="/About" activeStyle>
+          <NavLink to="/About" activestyle="true">
             About
           </NavLink>
-          <NavLink to="/Contact Us" activeStyle>
+          <NavLink to="/Contact Us" activestyle="true">
           Contact Us
           </NavLink>
-          <NavLink to="/Services" activeStyle>
+          <NavLink to="/Services" activestyle="true">
           Services
           </NavLink>
           <NavBtn to="/Signup"></NavBtn>

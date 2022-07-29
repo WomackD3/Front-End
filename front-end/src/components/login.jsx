@@ -4,14 +4,16 @@ import 'primereact/resources/primereact.css';
 import 'primeflex/primeflex.css';
 import '../App.scss';
 import ReactDOM from 'react-dom';
+import { Link } from 'react-router-dom'
+import './Register'
 
-import React, { useEffect, useState } from 'react';
-import { useForm, Controller } from 'react-hook-form';
+import React from 'react'
+import { useForm } from 'react-hook-form';
 import { InputText } from 'primereact/inputtext';
 import { Button } from 'primereact/button';
 import { classNames } from 'primereact/utils';
 
-export const Login = () => {
+export default function Login (){
     const { register, handleSubmit, formState: { errors } } = useForm();
     const onSubmit = data => console.log(data);
     console.log(errors);
@@ -35,12 +37,12 @@ export const Login = () => {
                     </div>
                     
                     <Button type="submit" label="Submit" className="mt-2" />
-                    <h6 className="already">Don't have an account? <a href=''>Make an account.</a></h6>
+                    <h6 className="already">Don't have an account? <Link to="/Register">Make an account.</Link></h6> 
                 </form>
             </div>
         </div>
     );
 }
 
-const rootElement = document.getElementById("root");
-ReactDOM.render(<Login />, rootElement);
+// const rootElement = document.getElementById("root");
+// ReactDOM.render(<Login />, rootElement);
