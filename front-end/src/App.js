@@ -1,4 +1,4 @@
-import './App2.scss'
+import './App.scss'
 import {RegisterForm} from './components/register.jsx'
 
 function App() {
