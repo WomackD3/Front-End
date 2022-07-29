@@ -1,6 +1,12 @@
+import 'primeicons/primeicons.css';
+import 'primereact/resources/themes/lara-light-indigo/theme.css';
+import 'primereact/resources/primereact.css';
+import 'primeflex/primeflex.css';
+import '../App.scss';
+import ReactDOM from 'react-dom';
 
 import React, { useEffect, useState } from 'react';
-import { Form, Field } from 'react-final-form';
+import { useForm, Controller } from 'react-hook-form';
 import { InputText } from 'primereact/inputtext';
 import { Button } from 'primereact/button';
 import { Dropdown } from 'primereact/dropdown';
@@ -11,52 +17,37 @@ import { Dialog } from 'primereact/dialog';
 import { Divider } from 'primereact/divider';
 import { classNames } from 'primereact/utils';
 import { CountryService } from '../service/CountryService';
+import '../Form.scss';
 
 export const RegisterForm = () => {
     const [countries, setCountries] = useState([]);
     const [showMessage, setShowMessage] = useState(false);
     const [formData, setFormData] = useState({});
     const countryservice = new CountryService();
+    const defaultValues = {
+        name: '',
+        email: '',
+        password: '',
+        date: null,
+        country: null,
+        accept: false
+    }
 
     useEffect(() => {
         countryservice.getCountries().then(data => setCountries(data));
-    }, []); // eslint-disable-line react-hooks/exhaustive-deps
+    }, []);
 
-    const validate = (data) => {
-        let errors = {};
+    const { control, formState: { errors }, handleSubmit, reset } = useForm({ defaultValues });
 
-        if (!data.name) {
-            errors.name = 'Name is required.';
-        }
-
-        if (!data.email) {
-            errors.email = 'Email is required.';
-        }
-        else if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(data.email)) {
-            errors.email = 'Invalid email address. E.g. example@email.com';
-        }
-
-        if (!data.password) {
-            errors.password = 'Password is required.';
-        }
-
-        if (!data.accept) {
-            errors.accept = 'You need to agree to the terms and conditions.';
-        }
-
-        return errors;
-    };
-
-    const onSubmit = (data, form) => {
+    const onSubmit = (data) => {
         setFormData(data);
         setShowMessage(true);
 
-        form.restart();
+        reset();
     };
 
-    const isFormFieldValid = (meta) => !!(meta.touched && meta.error);
-    const getFormErrorMessage = (meta) => {
-        return isFormFieldValid(meta) && <small className="p-error">{meta.error}</small>;
+    const getFormErrorMessage = (name) => {
+        return errors[name] && <small className="p-error">{errors[name].message}</small>
     };
 
     const dialogFooter = <div className="flex justify-content-center"><Button label="OK" className="p-button-text" autoFocus onClick={() => setShowMessage(false)} /></div>;
@@ -74,11 +65,10 @@ export const RegisterForm = () => {
         </React.Fragment>
     );
 
-  return (
-      <div className="display">
-        <div className="register-form">
+    return (
+        <div className="form">
             <Dialog visible={showMessage} onHide={() => setShowMessage(false)} position="top" footer={dialogFooter} showHeader={false} breakpoints={{ '960px': '80vw' }} style={{ width: '30vw' }}>
-                <div className="flex align-items-center flex-column pt-6 px-3">
+                <div className="flex justify-content-center flex-column pt-6 px-3">
                     <i className="pi pi-check-circle" style={{ fontSize: '5rem', color: 'var(--green-500)' }}></i>
                     <h5>Registration Successful!</h5>
                     <p style={{ lineHeight: 1.5, textIndent: '1rem' }}>
@@ -89,69 +79,69 @@ export const RegisterForm = () => {
 
             <div className="flex justify-content-center">
                 <div className="card">
-                    <h5 className="text-center">Register</h5>
-                    <Form onSubmit={onSubmit} initialValues={{ name: '', email: '', password: '', date: null, country: null, accept: false }} validate={validate} render={({ handleSubmit }) => (
-                        <form onSubmit={handleSubmit} className="p-fluid">
-                            <Field name="name" render={({ input, meta }) => (
-                                <div className="field">
-                                    <span className="p-float-label">
-                                        <InputText id="name" placeholder="Name" {...input} autoFocus className={classNames({ 'p-invalid': isFormFieldValid(meta) })} />
-                                        <label htmlFor="name" className={classNames({ 'p-error': isFormFieldValid(meta) })}></label>
-                                    </span>
-                                    {getFormErrorMessage(meta)}
-                                </div>
+                    <h5 className="text-center">Create An Account</h5>
+                    <form onSubmit={handleSubmit(onSubmit)} className="p-fluid">
+                        <div className="field">
+                            <span className="p-float-label">
+                                <Controller name="name" control={control} rules={{ required: 'Name is required.' }} render={({ field, fieldState }) => (
+                                    <InputText id={field.name} {...field} autoFocus className={classNames({ 'p-invalid': fieldState.invalid })} />
+                                )} />
+                                <label htmlFor="name" className={classNames({ 'p-error': errors.name })}>Name*</label>
+                            </span>
+                            {getFormErrorMessage('name')}
+                        </div>
+                        <div className="field">
+                            <span className="p-float-label p-input-icon-right">
+                                <i className="pi pi-envelope" />
+                                <Controller name="email" control={control}
+                                    rules={{ required: 'Email is required.', pattern: { value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i, message: 'Invalid email address. E.g. example@email.com' } }}
+                                    render={({ field, fieldState }) => (
+                                        <InputText id={field.name} {...field} className={classNames({ 'p-invalid': fieldState.invalid })} />
+                                    )} />
+                                <label htmlFor="email" className={classNames({ 'p-error': !!errors.email })}>Email*</label>
+                            </span>
+                            {getFormErrorMessage('email')}
+                        </div>
+                        <div className="field">
+                            <span className="p-float-label">
+                                <Controller name="password" control={control} rules={{ required: 'Password is required.' }} render={({ field, fieldState }) => (
+                                    <Password id={field.name} {...field} toggleMask className={classNames({ 'p-invalid': fieldState.invalid })} header={passwordHeader} footer={passwordFooter} />
+                                )} />
+                                <label htmlFor="password" className={classNames({ 'p-error': errors.password })}>Password*</label>
+                            </span>
+                            {getFormErrorMessage('password')}
+                        </div>
+                        <div className="field">
+                            <span className="p-float-label">
+                                <Controller name="date" control={control} render={({ field }) => (
+                                    <Calendar id={field.name} value={field.value} onChange={(e) => field.onChange(e.value)} dateFormat="dd/mm/yy" mask="99/99/9999" showIcon />
+                                )} />
+                                <label htmlFor="date">Birthday</label>
+                            </span>
+                        </div>
+                        <div className="field">
+                            <span className="p-float-label">
+                                <Controller name="country" control={control} render={({ field }) => (
+                                    <Dropdown id={field.name} value={field.value} onChange={(e) => field.onChange(e.value)} options={countries} optionLabel="name" />
+                                )} />
+                                <label htmlFor="country">Country</label>
+                            </span>
+                        </div>
+                        <div className="field-checkbox">
+                            <Controller name="accept" control={control} rules={{ required: true }} render={({ field, fieldState }) => (
+                                <Checkbox inputId={field.name} onChange={(e) => field.onChange(e.checked)} checked={field.value} className={classNames({ 'p-invalid': fieldState.invalid })} />
                             )} />
-                            <Field name="email" render={({ input, meta }) => (
-                                <div className="field">
-                                    <span className="p-float-label p-input-icon-right">
-                                        <i className="pi pi-envelope" />
-                                        <InputText id="email" placeholder="Email" {...input} className={classNames({ 'p-invalid': isFormFieldValid(meta) })} />
-                                        <label htmlFor="email" className={classNames({ 'p-error': isFormFieldValid(meta) })}></label>
-                                    </span>
-                                    {getFormErrorMessage(meta)}
-                                </div>
-                            )} />
-                            <Field name="password" render={({ input, meta }) => (
-                                <div className="field">
-                                    <span className="p-float-label">
-                                        <Password id="password" placeholder="Password" {...input} toggleMask className={classNames({ 'p-invalid': isFormFieldValid(meta) })} header={passwordHeader} footer={passwordFooter} />
-                                        <label htmlFor="password" className={classNames({ 'p-error': isFormFieldValid(meta) })}></label>
-                                    </span>
-                                    {getFormErrorMessage(meta)}
-                                </div>
-                            )} />
-                            <Field name="date" render={({ input }) => (
-                                <div className="field">
-                                    <span className="p-float-label">
-                                        <Calendar id="date" placeholder="Birthday" {...input} dateFormat="dd/mm/yy" mask="99/99/9999" showIcon />
-                                        <label htmlFor="date"></label>
-                                    </span>
-                                </div>
-                            )} />
-                            <Field name="country" render={({ input }) => (
-                                <div className="field">
-                                    <span className="p-float-label">
-                                        <Dropdown id="country" {...input} options={countries} optionLabel="name" />
-                                        <label htmlFor="country">Country</label>
-                                    </span>
-                                </div>
-                )} />
-                            {/* <Field name="accept" type="select" render={({ input, meta }) => (
-                                <div className="field-checkbox">
-                                    <Checkbox inputId="accept" {...input} className={classNames({ 'p-invalid': isFormFieldValid(meta) })} />
-                                    <label htmlFor="accept" className={classNames({ 'p-error': isFormFieldValid(meta) })}>I agree to the terms and conditions*</label>
-                    </div>
-                    
-                            )} /> */}
+                            <label htmlFor="accept" className={classNames({ 'p-error': errors.accept })}>I agree to the terms and conditions*</label>
+                        </div>
 
-                            <Button type="submit" label="Submit" className="mt-2" />
-                        </form>
-                    )} />
+                        <Button type="submit" label="Submit" className="mt-2" />
+                        <h6 className="already">Already have an account? <a href=''>Sign in!</a></h6>
+                    </form>
                 </div>
             </div>
-      </div>
-      </div>
+        </div>
     );
 }
 
-
+const rootElement = document.getElementById("root");
+ReactDOM.render(<RegisterForm />, rootElement);
