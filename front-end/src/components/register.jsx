@@ -9,7 +9,7 @@ import { useForm, Controller } from 'react-hook-form';
 import { Link } from 'react-router-dom';
 import { InputText } from 'primereact/inputtext';
 import { Button } from 'primereact/button';
-import { Dropdown } from 'primereact/dropdown';
+// import { Dropdown } from 'primereact/dropdown';
 import { Calendar } from 'primereact/calendar';
 import { Password } from 'primereact/password';
 import { Checkbox } from 'primereact/checkbox';
@@ -20,7 +20,7 @@ import { classNames } from 'primereact/utils';
 import '../Form.scss';
 
 const RegisterForm = () => {
-    const [countries, setCountries] = useState([]);
+    //const [countries, setCountries] = useState([]);
     const [showMessage, setShowMessage] = useState(false);
     const [formData, setFormData] = useState({});
     // const countryservice = new CountryService();
@@ -119,14 +119,14 @@ const RegisterForm = () => {
                                 <label htmlFor="date">Birthday</label>
                             </span>
                         </div>
-                        <div className="field">
+                        {/* <div className="field">
                             <span className="p-float-label">
                                 <Controller name="country" control={control} render={({ field }) => (
                                     <Dropdown id={field.name} value={field.value} onChange={(e) => field.onChange(e.value)} options={countries} optionLabel="name" />
                                 )} />
                                 <label htmlFor="country">Country</label>
                             </span>
-                        </div>
+                        </div> */}
                         <div className="field-checkbox">
                             <Controller name="accept" control={control} rules={{ required: true }} render={({ field, fieldState }) => (
                                 <Checkbox inputId={field.name} onChange={(e) => field.onChange(e.checked)} checked={field.value} className={classNames({ 'p-invalid': fieldState.invalid })} />
@@ -144,6 +144,3 @@ const RegisterForm = () => {
 }
 
 export default RegisterForm;
-
-// const rootElement = document.getElementById("root");
-// ReactDOM.render(<RegisterForm />, rootElement);
