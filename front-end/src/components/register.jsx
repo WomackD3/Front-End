@@ -3,10 +3,10 @@ import 'primereact/resources/themes/lara-light-indigo/theme.css';
 import 'primereact/resources/primereact.css';
 import 'primeflex/primeflex.css';
 import '../App.scss';
-import ReactDOM from 'react-dom';
 
 import React, { useEffect, useState } from 'react';
 import { useForm, Controller } from 'react-hook-form';
+import { Link } from 'react-router-dom';
 import { InputText } from 'primereact/inputtext';
 import { Button } from 'primereact/button';
 import { Dropdown } from 'primereact/dropdown';
@@ -16,14 +16,14 @@ import { Checkbox } from 'primereact/checkbox';
 import { Dialog } from 'primereact/dialog';
 import { Divider } from 'primereact/divider';
 import { classNames } from 'primereact/utils';
-import { CountryService } from '../service/CountryService';
+// import { CountryService } from '../service/CountryService';
 import '../Form.scss';
 
-export const RegisterForm = () => {
+const RegisterForm = () => {
     const [countries, setCountries] = useState([]);
     const [showMessage, setShowMessage] = useState(false);
     const [formData, setFormData] = useState({});
-    const countryservice = new CountryService();
+    // const countryservice = new CountryService();
     const defaultValues = {
         name: '',
         email: '',
@@ -33,9 +33,9 @@ export const RegisterForm = () => {
         accept: false
     }
 
-    useEffect(() => {
-        countryservice.getCountries().then(data => setCountries(data));
-    }, []);
+    // useEffect(() => {
+    //     countryservice.getCountries().then(data => setCountries(data));
+    // }, []);
 
     const { control, formState: { errors }, handleSubmit, reset } = useForm({ defaultValues });
 
@@ -135,7 +135,7 @@ export const RegisterForm = () => {
                         </div>
 
                         <Button type="submit" label="Submit" className="mt-2" />
-                        <h6 className="already">Already have an account? <a href=''>Sign in!</a></h6>
+                        <h6 className="already">Already have an account? <Link to='/'>Sign in!</Link></h6>
                     </form>
                 </div>
             </div>
@@ -143,5 +143,7 @@ export const RegisterForm = () => {
     );
 }
 
-const rootElement = document.getElementById("root");
-ReactDOM.render(<RegisterForm />, rootElement);
+export default RegisterForm;
+
+// const rootElement = document.getElementById("root");
+// ReactDOM.render(<RegisterForm />, rootElement);
