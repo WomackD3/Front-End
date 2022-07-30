@@ -3,9 +3,8 @@ import 'primereact/resources/themes/lara-light-indigo/theme.css';
 import 'primereact/resources/primereact.css';
 import 'primeflex/primeflex.css';
 import '../App.scss';
-import ReactDOM from 'react-dom';
 import { Link } from 'react-router-dom'
-import './Register'
+import './register'
 
 import React from 'react'
 import { useForm } from 'react-hook-form';
@@ -43,6 +42,3 @@ export default function Login (){
         </div>
     );
 }
-
-// const rootElement = document.getElementById("root");
-// ReactDOM.render(<Login />, rootElement);
