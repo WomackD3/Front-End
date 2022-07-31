@@ -17,16 +17,6 @@ export default function Login (){
     const onSubmit = data => console.log(data);
     console.log(errors);
 
-    const Images = [ ...someImagesLinks ]
-    const [position, setPosition] = useState(0);
-    useEffect(() => {
-        const interval = setInterval(() => {
-            if (position === 3) setPosition(0);
-            else setPosition(position + 1);
-        }, 5000);
-    return () => clearInterval(interval);
-  }, [position]);
-
     return (
         <div className="flex justify-content-center">
             
