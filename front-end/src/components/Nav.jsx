@@ -6,12 +6,7 @@ export default function Nav() {
     <nav>
       <div>
         <NavLink to="/">Home</NavLink>
-        </div>
-
-      
-
-
-
+      </div>
     </nav>
   )
 }
