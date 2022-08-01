@@ -25,7 +25,6 @@ export default function NavBar() {
           </NavLink>
           <NavBtn to="/Signup"></NavBtn>
         </NavMenu>
-        <NavBtnLink to="/Signup"> Sign up</NavBtnLink>
      </Nav>
     
     </>
