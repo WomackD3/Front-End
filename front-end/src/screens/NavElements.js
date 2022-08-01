@@ -14,8 +14,10 @@ z-index: 10;
 
 export const NavLink = styled(Link)`
 color: #fff;
+margin-right: 25px;
 display: flex;
 align-items: center;
+text-align: center;
 text-decoration: none;
 padding: 0 1rem;
 height: 100%;
