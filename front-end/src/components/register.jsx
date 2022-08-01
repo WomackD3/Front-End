@@ -4,19 +4,17 @@ import 'primereact/resources/primereact.css';
 import 'primeflex/primeflex.css';
 import '../App.scss';
 
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import { useForm, Controller } from 'react-hook-form';
 import { Link } from 'react-router-dom';
 import { InputText } from 'primereact/inputtext';
 import { Button } from 'primereact/button';
-// import { Dropdown } from 'primereact/dropdown';
 import { Calendar } from 'primereact/calendar';
 import { Password } from 'primereact/password';
 import { Checkbox } from 'primereact/checkbox';
 import { Dialog } from 'primereact/dialog';
 import { Divider } from 'primereact/divider';
 import { classNames } from 'primereact/utils';
-// import { CountryService } from '../service/CountryService';
 import '../Form.scss';
 
 const RegisterForm = () => {
