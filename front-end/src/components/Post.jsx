@@ -19,6 +19,9 @@ export default function Posts() {
         <hr />
         <span className='postDate'>1 hour ago</span>
       </div>
+      <p className='postDesc'>
+        This will be for the descripton of the post 
+      </p>
       
     </div>
   );

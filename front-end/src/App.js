@@ -18,7 +18,7 @@ function App() {
       </span></h2>
       <NavBar />
       <Posts />
-      <LightDark />
+      
       <Routes>
         <Route path="/" element={<Login />} />
         <Route path="/Register" element={<RegisterForm />} />

@@ -8,5 +8,45 @@
   height: 280px;
   object-fit: cover;
   border-radius: 7px;
-  
+
+}
+.postInfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.postCat {
+  font-family: sans-serif;
+  font-size: 12px;
+  color: orange;
+  line-height: 20px;
+  margin-top: 15px;
+  margin-right: 10;
+}
+.postTitle {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 24px;
+  font-weight: 700;
+  margin-top: 15px;
+  cursor: pointer;
+}
+
+.postDate {
+  font-family: 'Times New Roman', Times, serif;
+  font-style: italic;
+  font-size: 13px;
+  color: grey;
+  margin-top: 15px;
+}
+.postDesc {
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  font-size: 14px;
+  color: purple;
+  line-height: 25;
+  margin-top: 15px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
 }
