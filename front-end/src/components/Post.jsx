@@ -12,10 +12,10 @@ export default function Posts() {
         <div className='postCats'>
           <span className="postCat">Music</span>
           <span className="postCat">Comedy</span>
-        </div>
         <span className="postTitle">
           We Name the title of post here
         </span>
+        </div>
         <hr />
         <span className='postDate'>1 hour ago</span>
       </div>

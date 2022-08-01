@@ -13,6 +13,9 @@ export default function NavBar() {
         </NavLink >
         <Bars />
         <NavMenu>
+          <NavLink to="/Home" activestyle="true">
+            Home
+          </NavLink>
           <NavLink to="/About" activestyle="true">
             About
           </NavLink>
