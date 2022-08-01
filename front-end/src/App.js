@@ -4,9 +4,12 @@ import Login from './components/login'
 import NavBar from './screens/NavBar';
 import { Routes, Route } from 'react-router-dom';
 import { useSelector } from "react-redux";
-import SidebarDemo from './components/Sidebar.jsx'
+
+import SidebarDemo from './components/Sidebar.jsx';
 import { LightDark } from './components/LightDark';
 import Posts from './components/Post.jsx'
+import Write from "./Write.jsx";
+
 function App() {
   const user = useSelector((state) => state.user);
 
@@ -22,8 +25,10 @@ function App() {
       <Routes>
         <Route path="/" element={<Login />} />
         <Route path="/Register" element={<RegisterForm />} />
+        <Route path="/Write" element={<Write />} />
         <Route  path="/Sidebar" element={<LightDark />} />
         <Route  path="/Sidebar" element={<SidebarDemo />} />
+
       </Routes>
     </div>
   );
