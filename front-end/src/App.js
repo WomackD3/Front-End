@@ -5,6 +5,7 @@ import NavBar from './screens/NavBar';
 import { Routes, Route } from 'react-router-dom';
 import { BrowserRouter as Router } from 'react-router-dom'
 import { useSelector } from "react-redux";
+import Write from "./Write.jsx";
 
 function App() {
   const user = useSelector((state) => state.user);
@@ -17,6 +18,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Login />} />
         <Route path="/Register" element={<RegisterForm />} />
+        <Route path="/Write" element={<Write />} />
       </Routes>
     </div>
   );
