@@ -1,8 +1,7 @@
 //import './App.scss'
 import RegisterForm from './components/Register.jsx'
 import Login from './components/Login'
-import NavBar from './screens/NavBar';
-
+import NavBar from './screens/NavBar'
 import { Routes, Route } from 'react-router-dom';
 import { useSelector } from "react-redux";
 import SidebarDemo from './components/Sidebar.jsx';
@@ -25,13 +24,9 @@ function App() {
   
       
       <Routes>
-        <Route path="/Home" element={<Home />} />
         <Route path="/" element={<Login />} />
+        <Route path="/Home" element={<Home />} />
         <Route path="/Register" element={<RegisterForm />} />
-        <Route path="/Write" element={<Write />} />
-        <Route  path="/Sidebar" element={<SidebarDemo />} />
-        <Route  path="/Sidebar" element={<LightDark />} />
-        <Route  path="/" element={<SidebarDemo />} />
         </Routes>
     </div>
   );
