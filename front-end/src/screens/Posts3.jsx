@@ -7,6 +7,7 @@ import './posts3.css';
 import React from 'react';
 import { Card } from 'primereact/card';
 import { Button } from 'primereact/button';
+import { InputText } from 'primereact/inputtext'
 
 export default function CardDemo () {
 
@@ -15,8 +16,9 @@ export default function CardDemo () {
     );
     const footer = (
         <span>
-            <Button label="Save" icon="pi pi-check" />
-            <Button label="Cancel" icon="pi pi-times" className="p-button-secondary ml-2" />
+            {/* <Button label="Save" icon="pi pi-check" />
+            <Button label="Cancel" icon="pi pi-times" className="p-button-secondary ml-2" /> */}
+            <InputText type="text" className="block mb-2" placeholder="Write a comment..." style={{width: '42em'}}/>
         </span>
     );
 
@@ -27,7 +29,7 @@ export default function CardDemo () {
                     quisquam repellat libero asperiores earum nam nobis, culpa ratione quam perferendis esse, cupiditate neque quas!</p>
             </Card> */}
 
-            <Card title="Title Of Post" subTitle="1 hour ago" style={{width: '45em'}}header={header}>
+            <Card title="Title Of Post" subTitle="1 hour ago" style={{width: '45em'}} header={header} footer={footer}>
                 <p className="m-0" style={{lineHeight: '1.5'}}>Post Content</p>
             </Card>
         </div>
