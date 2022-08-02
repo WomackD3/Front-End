@@ -18,6 +18,7 @@
 .postCat {
   font-family: sans-serif;
   font-size: 12px;
+  flex-direction: column;
   color: orange;
   line-height: 20px;
   margin-top: 15px;
@@ -27,8 +28,10 @@
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   font-size: 24px;
   font-weight: 700;
+  flex-direction: column;
   margin-top: 15px;
   cursor: pointer;
+
 }
 
 .postDate {
@@ -41,7 +44,7 @@
 .postDesc {
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
   font-size: 14px;
-  color: purple;
+  color: grey;
   line-height: 25;
   margin-top: 15px;
   overflow: hidden;
