@@ -31,7 +31,11 @@ export default function CardDemo () {
 
             <Card title="Title Of Post" subTitle="1 hour ago" style={{width: '45em'}} header={header} footer={footer}>
                 <p className="m-0" style={{lineHeight: '1.5'}}>Post Content</p>
+                <Card style={{background: 'lightgray'}}>
+                <p>Added comments</p>
+                </Card>
             </Card>
+           
         </div>
     )
 }
