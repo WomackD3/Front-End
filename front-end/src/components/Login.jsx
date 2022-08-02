@@ -4,7 +4,7 @@ import 'primereact/resources/primereact.css';
 import 'primeflex/primeflex.css';
 import '../App.scss';
 import { Link } from 'react-router-dom'
-import './register'
+import './Register'
 
 import React from 'react'
 import { useForm } from 'react-hook-form';
@@ -19,6 +19,8 @@ export default function Login (){
 
     return (
         <div className="flex justify-content-center">
+            
+    
             <div className="card">
                 <h5 className="text-center">Log in</h5>
                 <form onSubmit={handleSubmit(onSubmit)} className="p-fluid">

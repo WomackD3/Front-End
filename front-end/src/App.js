@@ -1,7 +1,8 @@
-import './App.scss'
-import RegisterForm from './components/register.jsx'
-import Login from './components/login'
-// import NavBar from './screens/NavBar';
+//import './App.scss'
+import RegisterForm from './components/Register.jsx'
+import Login from './components/Login'
+import NavBar from './screens/NavBar';
+
 import { Routes, Route } from 'react-router-dom';
 import { useSelector } from "react-redux";
 import SidebarDemo from './components/Sidebar.jsx';

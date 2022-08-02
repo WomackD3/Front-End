@@ -8,7 +8,8 @@ export default function NavBar() {
     <>
       <Nav>
         <NavLink to="/">
-          <h1>Logo</h1>
+          <img src="project_logo.png" alt="project_logo"></img>
+          {/*<h1>Logo</h1>*/}
 
         </NavLink >
         <Bars />
