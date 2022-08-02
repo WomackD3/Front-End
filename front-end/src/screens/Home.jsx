@@ -5,6 +5,7 @@ import React from 'react'
 import MentionDemo from './Posts2'
 import Posts from '../components/Post.jsx'
 import CardDemo from './Posts3'
+import ToolBar from '../components/MakePost'
 
 
 export default function Home() {
@@ -14,6 +15,7 @@ export default function Home() {
     
      
     <div className="posts">
+      <ToolBar />
       <CardDemo />
       <CardDemo />
       <CardDemo />
