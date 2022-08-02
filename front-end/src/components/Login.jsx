@@ -4,7 +4,7 @@ import 'primereact/resources/primereact.css';
 import 'primeflex/primeflex.css';
 import '../App.scss';
 import { Link } from 'react-router-dom'
-import './register'
+import './Register'
 
 import React from 'react'
 import { useForm } from 'react-hook-form';
