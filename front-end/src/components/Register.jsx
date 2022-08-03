@@ -132,7 +132,7 @@ const RegisterForm = () => {
                             <label htmlFor="accept" className={classNames({ 'p-error': errors.accept })}>I agree to the terms and conditions*</label>
                         </div>
 
-                        <Button type="submit" label="Submit" className="mt-2" />
+                        <Button type="submit" label="Create Account" className="mt-2" />
                         <h6 className="already">Already have an account? <Link to='/'>Sign in!</Link></h6>
                     </form>
                 </div>

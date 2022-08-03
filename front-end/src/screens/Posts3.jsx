@@ -1,5 +1,5 @@
 import 'primeicons/primeicons.css';
-//import 'primereact/resources/themes/lara-light-indigo/theme.css';
+import 'primereact/resources/themes/lara-light-indigo/theme.css';
 import 'primereact/resources/primereact.css';
 import 'primeflex/primeflex.css';
 import './posts3.css';
@@ -9,7 +9,7 @@ import { Card } from 'primereact/card';
 import { Button } from 'primereact/button';
 import { InputText } from 'primereact/inputtext'
 
-export default function CardDemo () {
+export default function Post () {
 
     const header = (
         <img alt="Card" src="images/usercard.png" onError={(e) => e.target.src='https://www.primefaces.org/wp-content/uploads/2020/05/placeholder.png'} />

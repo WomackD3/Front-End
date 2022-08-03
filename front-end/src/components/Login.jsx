@@ -37,7 +37,7 @@ export default function Login (){
                         </span>
                     </div>
                     
-                    <Button type="submit" label="Submit" className="mt-2" />
+                    <Button type="submit" label="Log In" className="mt-2" />
                     <h6 className="already">Don't have an account? <Link to="/Register">Make an account.</Link></h6> 
                 </form>
             </div>
