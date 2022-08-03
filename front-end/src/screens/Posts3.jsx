@@ -1,5 +1,5 @@
 import 'primeicons/primeicons.css';
-//import 'primereact/resources/themes/lara-light-indigo/theme.css';
+import 'primereact/resources/themes/lara-light-indigo/theme.css';
 import 'primereact/resources/primereact.css';
 import 'primeflex/primeflex.css';
 import './posts3.css';
@@ -11,6 +11,9 @@ import { Button } from 'primereact/button';
 import Write from '../Write';
 export default function CardDemo() {
 
+
+
+export default function Post () {
 
   const [visibleBottom, setVisibleBottom] = useState(false);
 
