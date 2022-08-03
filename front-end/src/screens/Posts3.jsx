@@ -8,10 +8,8 @@ import { Sidebar } from 'primereact/sidebar';
 import React from 'react';
 import { Card } from 'primereact/card';
 import { Button } from 'primereact/button';
+import { InputText } from 'primereact/inputtext';
 import Write from '../Write';
-export default function CardDemo() {
-
-
 
 export default function Post () {
 
@@ -36,14 +34,19 @@ export default function Post () {
             </Card> */}
 
 
-            <Card title="Title Of Post" subTitle="1 hour ago" style={{width: '45em'}}header={header}>
-                <p className="m-0" style={{lineHeight: '1.5'}}></p>
-        </Card>
-        <Sidebar className='comment' visible={visibleBottom} position="bottom" onHide={() => setVisibleBottom(false)}>
-          <h2>Comment Thread</h2>
-          <h3><Write /></h3>
-                </Sidebar>
-      <Button icon="pi pi-arrow-up" onClick={() => setVisibleBottom(true)} className="mr-2" />
+            <Card title="Title Of Post" subTitle="1 hour ago" style={{width: '45em'}} header={header} footer={footer}>
+                <p className="m-0" style={{lineHeight: '1.5'}}>Post Content</p>
+                <Card style={{background: 'lightgray'}}>
+                    <p>Comments</p>
+                </Card>
+            </Card>
+            
+            {/* <Sidebar className='comment' visible={visibleBottom} position="bottom" onHide={() => setVisibleBottom(false)}>
+                <h2>Comment Thread</h2>
+                <h3><Write /></h3>
+            </Sidebar>
+            
+            <Button icon="pi pi-arrow-up" onClick={() => setVisibleBottom(true)} className="mr-2" /> */}
 
         </div>
     )

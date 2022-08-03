@@ -7,6 +7,8 @@ import { FileUpload } from 'primereact/fileupload';
 import { ProgressBar } from 'primereact/progressbar';
 import { Tooltip } from 'primereact/tooltip';
 import { Tag } from 'primereact/tag';
+import { Card } from 'primereact/card'
+import upload from './FileUpload.jsx'
 
 export default function ToolBar () {
 
@@ -109,11 +111,19 @@ export default function ToolBar () {
             </div>
         )
     }
+
+    const uploadFile = () => {
+        return (
+            <div>
+                <FileUpload />
+            </div>
+        )
+    }
     
     const leftContents = (
         <React.Fragment>
             <Button label="New" icon="pi pi-plus" className="mr-2" />
-            <Button label="Upload" icon="pi pi-upload" className="p-button-success" onClick={PhotoUpload}/>
+            <Button label="Upload" icon="pi pi-upload" className="p-button-success" onClick={uploadFile}/>
         </React.Fragment>
     );
 
