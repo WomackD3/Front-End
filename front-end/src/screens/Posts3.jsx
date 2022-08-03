@@ -11,6 +11,7 @@ import { Button } from 'primereact/button';
 import Write from '../Write';
 export default function CardDemo() {
 
+
   const [visibleBottom, setVisibleBottom] = useState(false);
 
     const header = (
@@ -18,8 +19,9 @@ export default function CardDemo() {
     );
     const footer = (
         <span>
-            <Button label="Save" icon="pi pi-check" />
-            <Button label="Cancel" icon="pi pi-times" className="p-button-secondary ml-2" />
+            {/* <Button label="Save" icon="pi pi-check" />
+            <Button label="Cancel" icon="pi pi-times" className="p-button-secondary ml-2" /> */}
+            <InputText type="text" className="block mb-2" placeholder="Write a comment..." style={{width: '42em'}}/>
         </span>
     );
 
@@ -30,6 +32,7 @@ export default function CardDemo() {
                     quisquam repellat libero asperiores earum nam nobis, culpa ratione quam perferendis esse, cupiditate neque quas!</p>
             </Card> */}
 
+
             <Card title="Title Of Post" subTitle="1 hour ago" style={{width: '45em'}}header={header}>
                 <p className="m-0" style={{lineHeight: '1.5'}}></p>
         </Card>
@@ -38,6 +41,7 @@ export default function CardDemo() {
           <h3><Write /></h3>
                 </Sidebar>
       <Button icon="pi pi-arrow-up" onClick={() => setVisibleBottom(true)} className="mr-2" />
+
         </div>
     )
 }

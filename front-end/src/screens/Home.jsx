@@ -7,12 +7,14 @@ import MentionDemo from './Posts2'
 import NavBar from './NavBar'
 import CardDemo from './Posts3'
 import ToolBar from '../components/MakePost'
+import PhotoUpload from '../components/FileUpload'
 
 
 export default function Home() {
   
   return (
     <>
+
      <NavBar />
      
     <div className="posts">
@@ -24,7 +26,6 @@ export default function Home() {
      
     </div>
   
-    </>
-  
+
   )
 }
