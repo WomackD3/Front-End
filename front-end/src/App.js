@@ -6,7 +6,7 @@ import {useState, useEffect} from 'react'
 import { Routes, Route, useNavigate } from 'react-router-dom';
 import {verifyUser} from "./service/users.js"
 import { useSelector, useDispatch } from "react-redux";
-
+import About from './screens/About.jsx'
 
 
 function App() {
@@ -52,6 +52,7 @@ function App() {
         <Route path="/" element={<Login />} />
         <Route path="/Home" element={<Home />} />
         <Route path="/Register" element={<RegisterForm />} />
+        <Route path="/About" element={<About />} />
         </Routes>
     </div>
   );
