@@ -24,23 +24,35 @@ export default function SidebarDemo() {
     return (
         <div>
             <div className="card">
-                <Sidebar className="card" visible={visibleLeft} onHide={() => setVisibleLeft(false)}>
+          <Sidebar className="card"
+            visible={visibleLeft}
+            onHide={() => setVisibleLeft(false)}>
                     <h3>Left Sidebar</h3>
                 </Sidebar>
 
-                <Sidebar visible={visibleRight} position="right" onHide={() => setVisibleRight(false)}>
+          <Sidebar
+            visible={visibleRight}
+            position="right"
+            onHide={() => setVisibleRight(false)}>
                     <h3>Right Sidebar</h3>
                 </Sidebar>
 
-                <Sidebar visible={visibleTop} position="top" onHide={() => setVisibleTop(false)}>
+          <Sidebar
+            visible={visibleTop}
+            position="top" onHide={() => setVisibleTop(false)}>
                     <h3>Top Sidebar</h3>
                 </Sidebar>
 
-                <Sidebar visible={visibleBottom} position="bottom" onHide={() => setVisibleBottom(false)}>
+          <Sidebar
+            visible={visibleBottom}
+            position="bottom"
+            onHide={() => setVisibleBottom(false)}>
                     <h3>Bottom Sidebar</h3>
                 </Sidebar>
 
-                <Sidebar visible={visibleFullScreen} fullScreen onHide={() => setVisibleFullScreen(false)}>
+          <Sidebar
+            visible={visibleFullScreen}
+            fullScreen onHide={() => setVisibleFullScreen(false)}>
                     <h3>Full Screen Sidebar</h3>
                 </Sidebar>
 

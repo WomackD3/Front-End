@@ -20,13 +20,13 @@ export default function Post () {
     const header = (
         <img alt="Card" src="images/usercard.png" onError={(e) => e.target.src='https://www.primefaces.org/wp-content/uploads/2020/05/placeholder.png'} />
     );
-    const footer = (
-        <span>
-            {/* <Button label="Save" icon="pi pi-check" />
-            <Button label="Cancel" icon="pi pi-times" className="p-button-secondary ml-2" /> */}
-            <InputText type="text" className="block mb-2" placeholder="Write a comment..." style={{width: '42em'}}/>
-        </span>
-    );
+    // const footer = (
+    //     <span>
+    //         {/* <Button label="Save" icon="pi pi-check" />
+    //         <Button label="Cancel" icon="pi pi-times" className="p-button-secondary ml-2" /> */}
+    //         {/* <InputText type="text" className="block mb-2" placeholder="Write a comment..." style={{width: '42em'}}/> */}
+    //     </span>
+    // );
 
     return (
         <div className="cardDemo">
@@ -39,7 +39,7 @@ export default function Post () {
             <Card title="Title Of Post" subTitle="1 hour ago" style={{width: '45em'}}header={header}>
                 <p className="m-0" style={{lineHeight: '1.5'}}></p>
         </Card>
-        <Sidebar className='comment' visible={visibleBottom} position="bottom" onHide={() => setVisibleBottom(false)}>
+        <Sidebar className='comment' type="comment" visible={visibleBottom} position="bottom" onHide={() => setVisibleBottom(false)}>
           <h2>Comment Thread</h2>
           <h3><Write /></h3>
                 </Sidebar>
