@@ -18,10 +18,8 @@ import { classNames } from 'primereact/utils';
 import '../Form.scss';
 
 const RegisterForm = () => {
-    //const [countries, setCountries] = useState([]);
     const [showMessage, setShowMessage] = useState(false);
     const [formData, setFormData] = useState({});
-    // const countryservice = new CountryService();
     const defaultValues = {
         name: '',
         email: '',
@@ -31,9 +29,7 @@ const RegisterForm = () => {
         accept: false
     }
 
-    // useEffect(() => {
-    //     countryservice.getCountries().then(data => setCountries(data));
-    // }, []);
+    
 
     const { control, formState: { errors }, handleSubmit, reset } = useForm({ defaultValues });
 
@@ -117,14 +113,7 @@ const RegisterForm = () => {
                                 <label htmlFor="date">Birthday</label>
                             </span>
                         </div>
-                        {/* <div className="field">
-                            <span className="p-float-label">
-                                <Controller name="country" control={control} render={({ field }) => (
-                                    <Dropdown id={field.name} value={field.value} onChange={(e) => field.onChange(e.value)} options={countries} optionLabel="name" />
-                                )} />
-                                <label htmlFor="country">Country</label>
-                            </span>
-                        </div> */}
+   
                         <div className="field-checkbox">
                             <Controller name="accept" control={control} rules={{ required: true }} render={({ field, fieldState }) => (
                                 <Checkbox inputId={field.name} onChange={(e) => field.onChange(e.checked)} checked={field.value} className={classNames({ 'p-invalid': fieldState.invalid })} />
