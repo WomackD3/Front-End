@@ -5,23 +5,38 @@ import Home from './screens/Home.jsx'
 import {useState, useEffect} from 'react'
 import { Routes, Route, useNavigate } from 'react-router-dom';
 import {verifyUser} from "./service/users.js"
-// import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
+
 
 
 function App() {
-  const [user, setUser] = useState(null)
+  const user = useSelector((state) => state.user);
+  const dispatch = useDispatch();
   let navigate = useNavigate()
 
   useEffect(() => {
-    const fetchUser = async () => {
-      const res = await verifyUser()
-      setUser(res)
-      if (!res) {
-        navigate("/")
-      }
+    let token = localStorage.getItem("jwt")
+
+    let grabProfile = () => {
+      fetch("http://localhost:8080/api/profile",{
+        Accept: "application/json",
+        "Content-Type": "application/json",
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      })
+        .then(res=>res.json())
+        .then(data=>{
+            console.log(data)
+          // dispatch(setUser({ profile: data }))
+          // navigate('/Home')
+        })
+  
     }
-    fetchUser()
-  }, [])
+    if(!user.isLoggedIn && token){
+      grabProfile()
+    }
+  }, [user])
    // const user = useSelector((state) => state.user);
 
   return (
@@ -34,7 +49,7 @@ function App() {
   
       
       <Routes>
-        <Route path="/" element={<Login setUser={setUser} />} />
+        <Route path="/" element={<Login />} />
         <Route path="/Home" element={<Home />} />
         <Route path="/Register" element={<RegisterForm />} />
         </Routes>
