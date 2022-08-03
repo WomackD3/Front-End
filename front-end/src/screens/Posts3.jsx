@@ -36,7 +36,7 @@ export default function CardDemo() {
             <Card title="Title Of Post" subTitle="1 hour ago" style={{width: '45em'}}header={header}>
                 <p className="m-0" style={{lineHeight: '1.5'}}></p>
         </Card>
-        <Sidebar className='comment' visible={visibleBottom} position="bottom" onHide={() => setVisibleBottom(false)}>
+        <Sidebar className='comment' type="comment" visible={visibleBottom} position="bottom" onHide={() => setVisibleBottom(false)}>
           <h2>Comment Thread</h2>
           <h3><Write /></h3>
                 </Sidebar>

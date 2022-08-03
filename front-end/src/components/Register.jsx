@@ -17,6 +17,7 @@ import { Divider } from 'primereact/divider';
 import { classNames } from 'primereact/utils';
 import '../Form.scss';
 
+
 const RegisterForm = () => {
     const [showMessage, setShowMessage] = useState(false);
     const [formData, setFormData] = useState({});

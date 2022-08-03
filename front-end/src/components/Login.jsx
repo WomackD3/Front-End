@@ -6,15 +6,20 @@ import "../App.scss";
 import { Link, useNavigate } from "react-router-dom";
 // import './Register'
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 // import { useForm } from 'react-hook-form';
 import { InputText } from "primereact/inputtext";
 import { Button } from "primereact/button";
 import { login } from "../service/users";
 // import { classNames } from "primereact/utils";
+import { useSelector, useDispatch } from "react-redux";
 
-export default function Login({setUser}) {
+import { setUser } from "../state/user.js"
+export default function Login() {
+  const user = useSelector((state) => state.user);
+
   // const { register, handleSubmit, formState: { errors } } = useForm();
+  const dispatch = useDispatch();
   const [form, setForm] = useState({
     email: '',
     password: ''
@@ -22,11 +27,22 @@ export default function Login({setUser}) {
   
   let navigate = useNavigate()
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault()
-    const user = await login(form)
-    setUser(user)
-    navigate('/Home')
+    fetch("http://localhost:8080/api/login",{
+      method:"POST",
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body:JSON.stringify(form)
+    })
+      .then(res=>res.json())
+      .then(data=>{
+        localStorage.setItem("jwt", data.token)
+        dispatch(setUser({ profile: data }))
+        navigate('/Home')
+      })
+
   };
 
 
@@ -37,7 +53,9 @@ export default function Login({setUser}) {
       [name]: value
     }))
   };
-
+  useEffect(() => {
+    console.log(user)
+  }, [user]);
   return (
     <div className="flex justify-content-center">
       <div className="card">
