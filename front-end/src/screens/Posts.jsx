@@ -2,7 +2,7 @@ import 'primeicons/primeicons.css';
 import 'primereact/resources/themes/lara-light-indigo/theme.css';
 import 'primereact/resources/primereact.css';
 import 'primeflex/primeflex.css';
-import './posts3.css';
+import './posts.css';
 import { useState } from 'react';
 import { Sidebar } from 'primereact/sidebar';
 import React from 'react';
