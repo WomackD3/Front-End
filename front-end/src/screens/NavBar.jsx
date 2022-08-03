@@ -7,7 +7,7 @@ export default function NavBar() {
   return (
     <>
       <Nav>
-        <NavLink to="/" style={{'padding-left': '0'}}>
+        <NavLink to="/" style={{'paddingLeft': '0'}}>
           <img src="/img/project_logo.png" alt="project_logo" style={{width: "90px"}}></img>
           {/*<h1>Logo</h1>*/}
 

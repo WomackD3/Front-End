@@ -3,6 +3,9 @@ import NavBar from './NavBar'
 import CardDemo from './Posts3'
 import ToolBar from '../components/MakePost'
 import SidebarDemo from '../components/Sidebar'
+import PhotoUpload from '../components/FileUpload'
+import WritePost from '../components/Inputtext'
+import { Card } from 'primereact/card'
 
 export default function Home() {
   
@@ -14,6 +17,12 @@ export default function Home() {
      
     <div className="posts">
       <ToolBar />
+      <div style={{width: "50%"}}>
+      <Card>
+        <WritePost />
+        <PhotoUpload />
+      </Card>
+      </div>
       <CardDemo />
       <CardDemo />
       <CardDemo />
