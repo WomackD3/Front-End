@@ -24,7 +24,7 @@ export default function SidebarDemo() {
     return (
         <div>
             <div className="card">
-                <Sidebar visible={visibleLeft} onHide={() => setVisibleLeft(false)}>
+                <Sidebar className="card" visible={visibleLeft} onHide={() => setVisibleLeft(false)}>
                     <h3>Left Sidebar</h3>
                 </Sidebar>
 

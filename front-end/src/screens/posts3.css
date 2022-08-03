@@ -208,3 +208,8 @@ span.flag {
 img.flag {
     width:30px
 }
+.comment {
+  width: 100px;
+  height: 1000px;
+  background-color: skyblue;
+}
