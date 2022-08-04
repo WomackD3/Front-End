@@ -1,11 +1,10 @@
 
 import './App.scss'
-import RegisterForm from './components/register.jsx'
-import Login from './components/login'
+import RegisterForm from './components/Register.jsx'
+import Login from './components/Login'
 import NavBar from './screens/NavBar';
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route, useNavigate } from 'react-router-dom';
 import { BrowserRouter as Router } from 'react-router-dom'
-import { useSelector } from "react-redux";
 import Write from "./Write.jsx";
 import Home from './screens/Home.jsx'
 import {useEffect} from 'react'
