@@ -1,6 +1,6 @@
 import React from 'react'
 import NavBar from './NavBar'
-import CardDemo from './Posts3'
+import CardDemo from './Posts'
 import ToolBar from '../components/MakePost'
 import SidebarDemo from '../components/Sidebar'
 import PhotoUpload from '../components/FileUpload'
