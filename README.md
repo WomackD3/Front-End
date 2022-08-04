@@ -38,6 +38,8 @@ GitHub Project Front-End Link: https://github.com/WomackD3/Front-End
 
 (insert what our ending visual we looking for)
 
+![name-of-you-image](https://github.com/WomackD3/Front-End/blob/development/Screen%20Shot%202022-08-03%20at%2011.44.51%20PM.png)
+
 ### Component Hierarchy
 
 
