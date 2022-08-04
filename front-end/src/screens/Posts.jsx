@@ -36,6 +36,7 @@ export default function Post () {
 
             <Card title="Title Of Post" subTitle="1 hour ago" style={{width: '45em'}} header={header} footer={footer}>
                     <p className="m-0" style={{lineHeight: '1.5'}}>Post Content</p>
+                    <hr/>
                 <Card style={{background: 'lightgray'}}>
                     <p>Comments</p>
                 </Card>
