@@ -10,7 +10,7 @@ import { useState, useEffect } from "react";
 // import { useForm } from 'react-hook-form';
 import { InputText } from "primereact/inputtext";
 import { Button } from "primereact/button";
-import { login } from "../service/users";
+import { Login } from "../service/users";
 // import { classNames } from "primereact/utils";
 import { useSelector, useDispatch } from "react-redux";
 
@@ -27,7 +27,9 @@ export default function Login() {
   
   let navigate = useNavigate()
 
+
   const handleSubmit = (e) => {
+
     e.preventDefault()
     fetch("http://localhost:8080/api/login",{
       method:"POST",

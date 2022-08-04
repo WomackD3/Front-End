@@ -1,13 +1,13 @@
-//import './App.scss'
-import RegisterForm from './components/Register.jsx'
-import Login from './components/Login'
+
+import './App.scss'
+import RegisterForm from './components/register.jsx'
+import Login from './components/login.jsx'
+import { Routes, Route } from 'react-router-dom';
+import Write  from "./Write.jsx";
 import Home from './screens/Home.jsx'
-import {useState, useEffect} from 'react'
-import { Routes, Route, useNavigate } from 'react-router-dom';
-import {verifyUser} from "./service/users.js"
+import {useEffect} from 'react'
 import { useSelector, useDispatch } from "react-redux";
-
-
+import { useNavigate } from 'react-router-dom';
 
 function App() {
   const user = useSelector((state) => state.user);
@@ -52,7 +52,10 @@ function App() {
         <Route path="/" element={<Login />} />
         <Route path="/Home" element={<Home />} />
         <Route path="/Register" element={<RegisterForm />} />
-        </Routes>
+        <Route path="/Write" element={<Write />} />
+      </Routes>
+
+
     </div>
   );
 }

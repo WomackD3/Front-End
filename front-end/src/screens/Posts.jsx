@@ -1,29 +1,30 @@
 import 'primeicons/primeicons.css';
-//import 'primereact/resources/themes/lara-light-indigo/theme.css';
+import 'primereact/resources/themes/lara-light-indigo/theme.css';
 import 'primereact/resources/primereact.css';
 import 'primeflex/primeflex.css';
-import './posts3.css';
+import './posts.css';
 import { useState } from 'react';
 import { Sidebar } from 'primereact/sidebar';
 import React from 'react';
 import { Card } from 'primereact/card';
 import { Button } from 'primereact/button';
+import { InputText } from 'primereact/inputtext';
 import Write from '../Write';
-export default function CardDemo() {
 
+export default function Post () {
 
   const [visibleRight, setVisibleRight] = useState(false);
 
     const header = (
         <img alt="Card" src="images/usercard.png" onError={(e) => e.target.src='https://www.primefaces.org/wp-content/uploads/2020/05/placeholder.png'} />
     );
-    // const footer = (
-    //     <span>
-    //         {/* <Button label="Save" icon="pi pi-check" />
-    //         <Button label="Cancel" icon="pi pi-times" className="p-button-secondary ml-2" /> */}
-    //         {/* <InputText type="text" className="block mb-2" placeholder="Write a comment..." style={{width: '42em'}}/> */}
-    //     </span>
-    // );
+    const footer = (
+        <span>
+            {/* <Button label="Save" icon="pi pi-check" />
+            <Button label="Cancel" icon="pi pi-times" className="p-button-secondary ml-2" /> */}
+            <InputText type="text" className="block mb-2" placeholder="Write a comment..." style={{width: '42em'}}/>
+        </span>
+    );
 
     return (
         <div className="cardDemo">
@@ -33,15 +34,19 @@ export default function CardDemo() {
             </Card> */}
 
 
-            <Card title="Title Of Post" subTitle="1 hour ago" style={{width: '45em'}}header={header}>
-                <p className="m-0" style={{lineHeight: '1.5'}}></p>
-        </Card>
+
+              <Card title="Title Of Post" subTitle="1 hour ago" style={{width: '45em'}} header={header} footer={footer}>
+                    <p className="m-0" style={{lineHeight: '1.5'}}>Post Content</p>
+              <Card style={{ background: 'lightgray' }}>
+                   <p>Comments</p>
+              </Card>
+              </Card>
         <Sidebar className='comment'
           type="comment"
           visible={visibleRight}
             position="right"
             onHide={() => setVisibleRight(false)}>
-          <h2>Comment Thread</h2>
+                        <h2>Comment Thread</h2>
           <h3><Write /></h3>
                 </Sidebar>
                 <Button icon="pi pi-arrow-left" onClick={() => setVisibleRight(true)} className="mr-2" />
