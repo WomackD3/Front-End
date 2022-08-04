@@ -23,10 +23,9 @@ export default function NavBar() {
           <NavLink to="/Contact Us" activestyle="true">
           Contact Us
           </NavLink>
-          <NavLink to="/Services" activestyle="true">
-          Services
+          <NavLink to="/" activestyle="true">
+          Signout
           </NavLink>
-          <NavBtn to="/Signup"></NavBtn>
         </NavMenu>
      </Nav>
     

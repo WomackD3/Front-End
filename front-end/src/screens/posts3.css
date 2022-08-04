@@ -209,7 +209,14 @@ img.flag {
     width:30px
 }
 .comment {
+  border: 4px black dotted;
   width: 100px;
   height: 1000px;
-  background-color: skyblue;
+  background-color: teal;
+}
+* {
+  border:red 1px solid;
+}
+.signOut {
+  color: red;
 }
