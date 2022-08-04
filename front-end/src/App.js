@@ -2,11 +2,11 @@
 import RegisterForm from './components/Register.jsx'
 import Login from './components/Login'
 import Home from './screens/Home.jsx'
-import {useState, useEffect} from 'react'
+import { useEffect} from 'react'
 import { Routes, Route, useNavigate } from 'react-router-dom';
-import {verifyUser} from "./service/users.js"
 import { useSelector, useDispatch } from "react-redux";
 import About from './screens/About.jsx'
+import Contact from './screens/Contact.jsx'
 
 
 function App() {
@@ -53,6 +53,7 @@ function App() {
         <Route path="/Home" element={<Home />} />
         <Route path="/Register" element={<RegisterForm />} />
         <Route path="/About" element={<About />} />
+        <Route path="/ContactUs" element={<Contact />} />
         </Routes>
     </div>
   );
