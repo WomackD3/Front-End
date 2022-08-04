@@ -11,7 +11,9 @@ export default function Write () {
                         <i class="fas fa-plus"></i>
                     </label>
                     <input type = "file" id="fileInput"  style={{display:"none"}}/>
-                    <input type ="text" placeholder ="Title" className="writeInput" autoFocus={true}/>
+
+                    <input type ="text" placeholder ="Comment" className="writeInput" autoFocus={true}/>
+
                 </div>
                 <div className ="writeFormGroup">
                     <textarea placeholder="write comment here" type="text"  className="writeInput writeText"> </textarea>

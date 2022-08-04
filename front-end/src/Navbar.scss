@@ -3,7 +3,7 @@ html {
 }
 
 body {
-    // background-color: #ffffff;
+    background-color: #ffffff;
     font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol;
     font-weight: normal;
     color: #495057;
@@ -13,12 +13,7 @@ body {
     margin-bottom: 50px;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
+h1, h2, h3, h4, h5, h6 {
     margin: 1.5rem 0 1rem 0;
     font-family: inherit;
     font-weight: 600;
@@ -26,37 +21,15 @@ h6 {
     color: inherit;
 }
 
-h1 {
-    font-size: 2.5rem;
-}
-
-h2 {
-    font-size: 2rem;
-}
-
-h3 {
-    font-size: 1.75rem;
-}
-
-h4 {
-    font-size: 1.5rem;
-}
-
-h5 {
-    font-size: 1.25rem;
-}
-
-h6 {
-    font-size: 1rem;
-}
-
+h1 { font-size: 2.5rem; }
+h2 { font-size: 2rem; }
+h3 { font-size: 1.75rem; }
+h4 { font-size: 1.5rem; }
+h5 { font-size: 1.25rem; }
+h6 { font-size: 1rem; }
 p {
     line-height: 1.5;
     margin: 0 0 1rem 0;
-}
-
-.already {
-    text-align: center;
 }
 
 .card {
@@ -77,11 +50,9 @@ input[type="number"]::-webkit-inner-spin-button {
     0% {
         background-color: rgba(165, 165, 165, 0.1)
     }
-
     50% {
         background-color: rgba(165, 165, 165, 0.3)
     }
-
     100% {
         background-color: rgba(165, 165, 165, 0.1)
     }
@@ -217,18 +188,11 @@ input[type="number"]::-webkit-inner-spin-button {
 }
 
 span.flag {
-    width: 44px;
-    height: 30px;
-    display: inline-block;
+    width:44px;
+    height:30px;
+    display:inline-block;
 }
 
 img.flag {
-    width: 30px
-}
-
-.Logo {
-  display: flex;
-  justify-content: center;
-  color:blue;
-  background-color: black;
+    width:30px
 }
