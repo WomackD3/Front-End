@@ -1,7 +1,7 @@
 
 import './App.scss'
-import RegisterForm from './components/register.jsx'
-import Login from './components/login.jsx'
+import RegisterForm from './components/Register.jsx'
+import Login from './components/Login.jsx'
 import { Routes, Route } from 'react-router-dom';
 import Write  from "./Write.jsx";
 import Home from './screens/Home.jsx'

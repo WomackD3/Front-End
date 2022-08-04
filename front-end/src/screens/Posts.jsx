@@ -37,16 +37,19 @@ export default function Post () {
 
               <Card title="Title Of Post" subTitle="1 hour ago" style={{width: '45em'}} header={header} footer={footer}>
                     <p className="m-0" style={{lineHeight: '1.5'}}>Post Content</p>
+
+       <hr/>
               <Card style={{ background: 'lightgray' }}>
                    <p>Comments</p>
               </Card>
-              </Card>
+          </Card>
         <Sidebar className='comment'
           type="comment"
           visible={visibleRight}
             position="right"
             onHide={() => setVisibleRight(false)}>
                         <h2>Comment Thread</h2>
+            
           <h3><Write /></h3>
                 </Sidebar>
                 <Button icon="pi pi-arrow-left" onClick={() => setVisibleRight(true)} className="mr-2" />
